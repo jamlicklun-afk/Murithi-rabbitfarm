@@ -1,78 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>Murithi Rabbit Farm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #f2f3f1;
+      --surface: #ffffff;
+      --ink: #1a1a1a;
+      --ink-soft: #555;
+      --accent: #2f7d32;
+      --accent-soft: #e5f2e5;
+      --radius: 14px;
+      --shadow-sm: 0 6px 14px rgba(0,0,0,.06);
+      --shadow-md: 0 16px 28px rgba(0,0,0,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
       margin: 0;
-      padding: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #e9efe8, var(--bg));
+      font-family: Inter, system-ui, Arial, sans-serif;
+      line-height: 1.6;
     }
+
     header {
-      background: green;
-      color: white;
-      padding: 20px;
+      padding: 56px 24px 48px;
       text-align: center;
+      background: radial-gradient(120% 120% at 50% 0%, #3f9b42 0%, #246b27 60%);
+      color: #fff;
     }
+
+    header h1 {
+        font-family: "Noto Sans", sans-serif;
+      font-size: 2.6rem;
+      letter-spacing: .2px;
+      margin: 0 0 8px;
+    }
+
+    header p {
+      margin: 0;
+      font-weight: 500;
+      opacity: .95;
+    }
+
     .container {
-      padding: 20px;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
     }
-    .rabbit {
-      background: white;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.8rem;
+      margin: 32px 0 18px;
     }
-    img {
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 12px;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card img {
+      display: block;
       width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
+      aspect-ratio: 4/3;
+      object-fit: cover;
     }
+
+    .card-body {
+      padding: 18px 18px 20px;
+    }
+
+    .card-body p {
+      margin: 0 0 8px;
+      color: var(--ink-soft);
+    }
+
     .price {
-      font-weight: bold;
-      color: green;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 8px;
+      letter-spacing: .2px;
     }
+
+    .contact {
+      margin-top: 36px;
+      padding: 20px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .contact b {
+      color: var(--ink);
+    }
+
     footer {
-      background: #222;
-      color: white;
+      background: #111;
+      color: #eee;
       text-align: center;
-      padding: 10px;
+      padding: 18px;
+      font-size: .9rem;
+      letter-spacing: .3px;
     }
   </style>
 </head>
-<body>
 
+<body>
 <header>
   <h1>Murithi Rabbit Farm</h1>
-  <p>Healthy Rabbits for Sale</p>
+  <p>Healthy, Well-Raised Rabbits</p>
 </header>
 
-<div class="container">
+<main class="container">
+  <h2 class="section-title">Our Rabbits</h2>
 
-  <h2>🐰 Our Rabbits</h2>
+  <section class="grid">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Healthy adult rabbit">
+      <div class="card-body">
+        <p>Healthy adult rabbit raised with proper care.</p>
+        <span class="price">Adult Rabbit — KES 800</span>
+      </div>
+    </article>
 
-  <div class="rabbit">
-    <img src="rabbit1.jpg" alt="Rabbit">
-    <p>Healthy adult rabbit raised with proper care.</p>
-    <p class="price">Adult Rabbit: KES 800</p>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1585837814269-6630d8966ce8?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Strong breeding rabbit">
+      <div class="card-body">
+        <p>Strong rabbit suitable for breeding.</p>
+        <span class="price">Breeding Rabbit — KES 1,200</span>
+      </div>
+    </article>
+  </section>
+
+  <h2 class="section-title">Contact</h2>
+  <div class="contact">
+    <p>Phone: <b>0116 228 696</b></p>
+    <p>Location: Kibaranyaki, Githongo</p>
   </div>
-
-  <div class="rabbit">
-    <img src="rabbit2.jpg" alt="Rabbit">
-    <p>Strong rabbit suitable for breeding.</p>
-    <p class="price">Breeding Rabbit: KES 1,200</p>
-  </div>
-
-  <h2>📞 Contact Us</h2>
-  <p>Phone: <b>0116 228 696</b></p>
-  <p>Location: Kibaranyaki, Githongo</p>
-
-</div>
+</main>
 
 <footer>
-  <p>© 2025 Murithi Rabbit Farm</p>
+  © 2025 Murithi Rabbit Farm
 </footer>
-
 </body>
-</html> 
+</html>
